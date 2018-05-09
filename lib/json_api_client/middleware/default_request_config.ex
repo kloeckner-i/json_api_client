@@ -41,7 +41,7 @@ defmodule JsonApiClient.Middleware.DefaultRequestConfig do
   end
 
   defp user_agent_suffix do
-    Application.get_env(:json_api_client, :user_agent_suffix, Project.config()[:app])
+    Application.get_env(:json_api_client, :user_agent_suffix) || Project.config()[:app]
   end
 
   defp timeout do
